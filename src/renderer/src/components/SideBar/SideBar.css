@@ -1,0 +1,56 @@
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: rgba(245, 245, 245);
+  padding: 20px 15px;
+  box-sizing: border-box;
+  position: fixed;
+  overflow-y: hidden;
+  align-items: center;
+}
+
+.sidebar-menu {
+  height: 100%;
+  border-right: none !important;
+  border-radius: 16px !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1vh;
+}
+
+.sidebar-menu .ant-menu-item {
+    width: 75%;
+  border-radius: 10px !important;
+  height: 40px !important;
+  line-height: 40px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center;
+}
+.sidebar-menu .ant-menu-item:hover {
+  background-color: rgba(243, 244, 246) !important;
+  box-shadow: 0 4px 6px rbga(0, 0, 0.1);
+  transform: scale(1.1);
+}
+
+.sidebar-menu .ant-menu-item-selected {
+  background-color: rgba(239, 239, 254) !important;
+  color: rgba(99, 102, 241) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.sidebar-menu .ant-menu-item::after {
+  display: none !important;
+}
+
+.sidebar-menu .ant-menu-item-icon {
+  font-size: 16px !important;
+}
+
+.sidebar-menu .ant-menu-title-content {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  margin-left: 12px !important;
+  color:rgb(97, 102, 107)
+}
