@@ -6,7 +6,6 @@ import { Outlet } from 'react-router-dom'
 const { Content } = Layout
 
 const AppLayout: React.FC = () => {
-  const now = new Date()
   return (
     <Layout className="app-layout">
       <Layout.Sider className="app-sider">

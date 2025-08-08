@@ -1,17 +1,21 @@
-import { Card } from 'antd';
+import { Card, Space, Typography } from 'antd'
 import React from 'react'
 
-function ClockInRecordList(): React.JSX.Element{
+const { Title, Text } = Typography
 
-    
-    return (
-        <div className='ClockInRecordList'>
-            <Card>
-                
-            </Card>
-        </div>
-    )
-
+function ClockInRecordList(): React.JSX.Element {
+  return (
+    <div className="ClockInRecordList">
+      <Space direction='horizontal' className='record-list-top'>
+        <Space direction="vertical">
+          <Title level={3}>打卡记录</Title>
+          <Text>记录你的历史打卡记录</Text>
+        </Space>
+        <Text>返回打卡</Text>
+      </Space>
+      <Card></Card>
+    </div>
+  )
 }
 
-export default ClockInRecordList;
+export default ClockInRecordList
