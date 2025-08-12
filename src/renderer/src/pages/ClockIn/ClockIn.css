@@ -1,18 +1,24 @@
+.clockin-header{
+  width: 100%;
+}
 .clockin-title {
   margin-bottom: 0;
 }
 .clockin-content {
   color: rgba(156, 163, 175);
-  margin: 0 0 1.5vh;
+  margin-bottom: 20px;
 }
 .clockin-container {
-  width: 70%;
-  min-height: 50vh;
-  margin: 0 7vh 7vh 7vh;
+  width: 50rem;
+  margin: 0 5rem 40px 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .clockin-card {
-  width: 100vh;
+  width: 50rem;
+  padding: 1.5rem;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -23,12 +29,8 @@
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
 
-.clockin-card .ant-card-body {
-  padding: 24px;
-}
-
 .clockin-icon {
-  font-size: 48px;
+  font-size: 44px;
   color: rgba(99, 102, 241);
 }
 
@@ -38,19 +40,19 @@
   justify-content: center;
   align-items: center;
   border-radius: 16px;
-  width: 50vh;
-  height: 10vh;
+  width: 320px;
+  height: 60px;
   margin: 24px auto;
   font-size: 32px;
   font-weight: bold;
 }
 
 .clockin-button {
-  width: 50vh;
-  height: 7vh;
+  width: 320px;
+  height: 48px;
   border-radius: 16px;
   background: rgba(99, 102, 241);
-  border-color: rgba(99, 102, 241);
+
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
@@ -59,6 +61,52 @@
   border-color: rgba(99, 102, 241) !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transform: translateY(-4px);
+}
+.clockend-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.clockend-modal {
+  width: 430px;
+  height: 270px;
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-overlay{
+  backdrop-filter: blur(0.7px);
+  transition: filter 0.2s ease;
+
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding:40px 0;
+
+  overflow:hidden;
+}
+.duration{
+  color:rgba(99, 102, 244)
+}
+.get-price {
+  color: rgba(247, 158, 11);
+}
+.reward {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.clockend {
+  background-color: red;
 }
 
 .clockin-star {
@@ -69,41 +117,48 @@
 .clockin-bottom {
   display: flex;
   flex-direction: row;
-  width: 100%;
-  min-width: 100vh;
-  margin: 0 7vh 7vh 7vh;
+  width: 50rem;
+  height: 80px;
+  min-width:50rem;
+  margin: 40px 0;
   align-items: center;
-  gap: 4vh;
+  gap: 2rem;
 }
 
-.clockin-bottom .clockin-left {
-  width: 48vh;
+.clockin-bottom-card {
+  width: 49rem;
+  height: 80px;
+  padding: 1.5rem;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content:flex-start;
 }
-.clockin-bottom .clockin-left:hover {
+.clockin-bottom-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
-.clockin-bottom .clockin-right {
-  width: 48vh;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
+.clockin-bottom-card .ant-card-body{
+  padding: 0;
 }
-.clockin-bottom .clockin-right:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.hamburger-icon{
-  color:rgba(99, 102, 241);
+.hamburger-icon {
+  color: rgba(99, 102, 241);
   background-color: rgba(239, 239, 254);
-  width: 9vh;
-  height: 9vh;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.ranking-list{
+  color:rgba(245, 158, 11);
+  background-color: rgba(254, 245, 230);
+  width: 50px;
+  height: 50px;
   border-radius: 16px;
   align-items: center;
   display: flex;

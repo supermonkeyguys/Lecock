@@ -2,6 +2,7 @@ import React from 'react'
 import { Layout } from 'antd'
 import SideBar from '../SideBar/SideBar'
 import { Outlet } from 'react-router-dom'
+import './Layout.css'
 
 const { Content } = Layout
 

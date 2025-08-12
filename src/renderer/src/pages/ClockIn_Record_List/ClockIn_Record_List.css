@@ -1,3 +1,13 @@
-.record-list-top{
-    
+.record-list-header {
+  margin: 0 3rem;
+}
+.record-list-card {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  margin: 1rem 3rem 2rem;
+  transition: all 0.3s ease;
+}
+.record-list-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }

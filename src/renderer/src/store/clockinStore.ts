@@ -1,14 +1,5 @@
 import { create } from 'zustand'
-import { devtools } from 'zustand/middleware'
-
-interface ClockRecord {
-  id?: string
-  date: number
-  startTime: Date
-  endTime: Date
-  duration?: number
-  price?: number
-}
+import { ClockRecord } from './type/recordStore'
 
 interface ClockInState {
   duration: number
@@ -35,7 +26,7 @@ const api = {
 }
 
 export const useClockInStore = create<ClockInState>()(
-  devtools((set, get) => ({
+  (set, get) => ({
     records: [],
     currentTime: null,
     status: 'idle',
@@ -72,14 +63,14 @@ export const useClockInStore = create<ClockInState>()(
       const price = Number(((duration / 3600) * 20).toFixed(2))
 
       const record: ClockRecord = {
-        date: end.getDate(),
+        date: new Date(end.getDate()),
         startTime: currentTime,
         endTime: end,
         duration,
         price
       }
 
-      set({ status: 'saving' })
+
 
       try {
         await api.saveClockInRecord(record)
@@ -106,5 +97,5 @@ export const useClockInStore = create<ClockInState>()(
         set({ status: 'error' })
       }
     }
-  }))
+  })
 )

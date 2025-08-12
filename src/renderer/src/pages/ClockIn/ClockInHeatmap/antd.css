@@ -1,0 +1,42 @@
+.ant-picker-calendar {
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+.ant-picker-calendar-header {
+  border: none !important;
+  background: transparent !important;
+  padding: 0 !important;
+  margin-bottom: 16px !important;
+}
+.ant-picker-calendar-header {
+  border-bottom: none !important;
+}
+.ant-picker-calendar-date {
+  border: none !important;
+  border-radius: 8px !important;
+  margin: 2px !important;
+  transition: all 0.3s !important;
+  background-color: rgba(243, 244, 246);
+}
+.ant-picker-calendar-date:hover {
+  background-color: rgba(243, 244, 246);
+}
+.ant-picker-calendar-date-value {
+  color: rgba(99, 102, 241) !important;
+}
+.ant-picker-calendar-today .ant-picker-calendar-date .ant-picker-calendar-date-value {
+  color: inherit !important;
+  font-weight: normal !important;
+}
+.ant-picker-calendar-today .ant-picker-calendar-date {
+  border: none !important;
+  background: transparent !important;
+}
+.ant-picker-calendar-selected-date .ant-picker-calendar-date {
+  background: transparent !important;
+  border: none !important;
+}
+.ant-picker-cell-selected .ant-picker-cell-inner {
+  background-color: rgba(243, 244, 246) !important;
+}

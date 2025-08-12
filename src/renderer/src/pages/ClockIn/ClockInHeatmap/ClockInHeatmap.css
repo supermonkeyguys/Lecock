@@ -1,66 +1,19 @@
-.heatmap-calendar-container {
-  padding: 20px;
-}
-.ant-picker-calendar {
-  border: none !important;
-  box-shadow: none !important;
-  background: transparent !important;
-}
-.ant-picker-calendar-header {
-  border: none !important;
-  background: transparent !important;
-  padding: 0 !important;
-  margin-bottom: 16px !important;
-}
-.ant-picker-calendar-header .ant-select-selector {
-  border: none !important;
-  box-shadow: none !important;
-}
-.ant-picker-calendar-header {
-  border-bottom: none !important;
-}
-.ant-picker-calendar-date {
-  border: none !important;
-  border-radius: 8px !important;
-  margin: 2px !important;
-  transition: all 0.3s !important;
-  background-color: rgba(243, 244, 246);
-}
-.ant-picker-calendar-date:hover {
-  background-color: rgba(243, 244, 246);
-}
-.ant-picker-calendar-today .ant-picker-calendar-date .ant-picker-calendar-date-value {
-  color: inherit !important;
-  font-weight: normal !important;
-}
-.ant-picker-calendar-today .ant-picker-calendar-date {
-  border: none !important;
-  background: transparent !important;
-}
-.ant-picker-calendar-selected-date .ant-picker-calendar-date {
-  background: transparent !important;
-  border: none !important;
-}
-
 .clockin-heatmap-container {
-  width: 100vh;
-  min-width: 50vh;
+  width: 50rem;
   justify-items: center;
-  margin: 0 7vh 7vh 7vh;
+  margin: 40px 0;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
 }
-.clockin-recorded:hover{
+.clockin-heatmap-container:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
 }
-
 .clockin-heatmap {
-  margin-bottom: 20px;
   border-radius: 16px;
 }
-.record-title{
+.record-title {
   margin-top: 0;
 }
 
@@ -80,7 +33,6 @@
   font-weight: 600;
   margin-top: 2px;
 }
-
 
 .color-legend {
   display: flex;
@@ -108,19 +60,19 @@
 }
 .level-1 {
   background-color: rgba(239, 239, 254);
-  color:rgba(108, 111, 242);
+  color: rgba(108, 111, 242);
 }
 .level-2 {
   background-color: rgba(208, 209, 251);
-  color:rgba(108, 111, 242);
+  color: rgba(108, 111, 242);
 }
 .level-3 {
   background-color: rgba(177, 178, 248);
-  color:rgba(108, 111, 242);
+  color: rgba(108, 111, 242);
 }
 .level-4 {
   background-color: rgba(145, 148, 245);
-  color:#fff;
+  color: #fff;
 }
 .level-5 {
   background-color: rgba(99, 102, 241);
@@ -145,7 +97,7 @@
 
 .legend-color.level-4 {
   background-color: rgba(145, 148, 245);
-  color:rgba(108, 111, 242);
+  color: rgba(108, 111, 242);
 }
 
 .legend-color.level-5 {

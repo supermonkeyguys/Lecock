@@ -4,6 +4,7 @@ import { Card, Space, Typography, Calendar, CalendarProps } from 'antd'
 import dayjs from 'dayjs';
 import '../../../components/CountDate/getDate'
 import './ClockInHeatmap.css'
+import './antd.css'
 
 const { Title } = Typography
 
@@ -11,15 +12,7 @@ interface ClockInRecord {
   date: string
   duration: number
 }
-interface HeatmapCellProps {
-  duration: number
-}
-interface MonthRowData {
-  month: string
-  [key: string]: string | number
-}
 
-// 模拟数据
 const mockData: ClockInRecord[] = [
   { date: '2023-11-01', duration: 8 },
   { date: '2023-11-02', duration: 7.5 },
