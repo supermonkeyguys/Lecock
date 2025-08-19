@@ -1,0 +1,51 @@
+.page-container {
+  margin: 1rem 3rem 2rem;
+}
+.router-changer {
+  margin: 1rem 0;
+}
+.rank-filter {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 1rem 0 2rem;
+  padding: 10px 0 !important;
+}
+.rank-filter .ant-card-body {
+  padding: 16px 24px !important;
+}
+.filter-button {
+  background-color: rgba(99, 102, 241);
+  border: rgba(99, 102, 241);
+}
+.filter-button:hover {
+  background-color: rgba(114, 117, 242) !important;
+  border: rgba(114, 117, 242);
+}
+.rank-list {
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  margin: 1rem 0 2rem;
+}
+.rank-list:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+.prev {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}
+.hours {
+  color: rgba(99, 102, 241);
+  font-weight: 700;
+}
+.price {
+  color: rgba(245, 158, 11);
+}

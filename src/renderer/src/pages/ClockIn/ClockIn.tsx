@@ -154,7 +154,7 @@ const ClockIn: React.FC = () => {
               </Col>
             </Row>
           </Card>
-          <Card className="clockin-bottom-card" onClick={() => navigate('/clcokin-rank')}>
+          <Card className="clockin-bottom-card" onClick={() => navigate('/clockin-rank')}>
             <Row align={'middle'} gutter={16}>
               <Col flex="none">
                 <div className="ranking-list">

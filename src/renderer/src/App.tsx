@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AppLayout from './components/Layout/Layout';
 import { routes } from './components/routes';
 import ClockInRecordList from './pages/ClockIn_Record_List/ClockIn_Record_List';
+import ClockInRanking from './pages/ClockIn_Ranking/ClockIn_Ranking';
 
 const App: React.FC = () => {
   return (
@@ -17,6 +18,7 @@ const App: React.FC = () => {
             />
           ))}
           <Route path='clockin-record' element={<ClockInRecordList/>}/>
+          <Route path='clockin-rank' element={<ClockInRanking />}/>
           <Route path="*" element={<div>404 Not Found</div>} />
         </Route>
         

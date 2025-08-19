@@ -1,5 +1,9 @@
 .record-list-header {
-  margin: 0 3rem;
+  margin: 2rem 3rem 1rem;
+}
+.backto-clockin{
+  display: flex;
+  align-items: center;
 }
 .record-list-card {
   border-radius: 16px;
@@ -10,4 +14,54 @@
 .record-list-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.record-list-bottom {
+  width: auto !important;
+  margin: 1rem 3rem 2rem;
+}
+.bottom-card {
+  border-radius: 16px;
+  width: 32%;
+  height: 6em;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+.bottom-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+.clock-icon {
+  border-radius: 16px;
+  color: rgba(99, 102, 241);
+  background-color: rgba(216, 216, 229);
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.linechart-icon {
+  border-radius: 16px;
+  color: rgba(245, 158, 103);
+  background-color: rgba(254, 245, 230);
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.star-icon {
+  border-radius: 16px;
+  color: rgba(16, 185, 129);
+  background-color: rgba(231, 248, 242);
+  padding: 1rem;
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

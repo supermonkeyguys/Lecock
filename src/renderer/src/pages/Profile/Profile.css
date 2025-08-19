@@ -1,0 +1,47 @@
+.profile-container {
+  margin: 1rem 3rem 2rem;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 1rem;
+}
+.nickname-count{
+    background-color: rgba(239, 239, 254);
+    width: 130px;
+    height: 30px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(99, 102, 241) !important;
+}
+.nickname-container{
+  border-radius: 16px;
+  border: none;
+}
+.ant-collapse-header{
+  border-radius: 16px !important; 
+}
+.panel-item{
+  border-radius: 16px !important;
+  background-color: rgba(243, 244, 246) !important;
+  padding:0;
+}
+.panel-icon{
+  color:rgba(245, 158, 11);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: rgba(235, 219, 192);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 1rem 0 0;
+}
+.panel-text{
+
+}

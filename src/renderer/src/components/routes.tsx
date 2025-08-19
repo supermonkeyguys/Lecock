@@ -7,7 +7,7 @@ import {
 import { lazy } from 'react'
 
 const ClockIn = lazy(() => import('../pages/ClockIn/ClockIn'))
-const DrawCard = lazy(() => import('../pages/CardDraw/CardDraw'))
+const DrawCard = lazy(() => import('../pages/DrawCrad/DrawCard'))
 const Profile = lazy(() => import('../pages/Profile/Profile'))
 const TeamMembers = lazy(() => import('../pages/TeamMembers/TeamMembers'))
 
@@ -22,7 +22,7 @@ export interface RouteConfig {
 export const routes: RouteConfig[] = [
   {
     key: '1',
-    path: '/clock-in',
+    path: '/clockin',
     element: ClockIn,
     label: '打卡',
     icon: <ClockCircleOutlined />
@@ -47,5 +47,5 @@ export const routes: RouteConfig[] = [
     element: TeamMembers,
     label: '团队成员',
     icon: <TeamOutlined />
-  }
+  },
 ]

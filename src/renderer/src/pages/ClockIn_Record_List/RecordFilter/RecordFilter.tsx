@@ -1,32 +1,48 @@
-import { CalendarOutlined } from '@ant-design/icons'
-import { Calendar, Card, Popover } from 'antd'
-import { useState } from 'react'
 import './RecordFilter.css'
+import CalendarPopover from './CalendarPopover'
+import { Button, InputNumber, Row, Space } from 'antd'
+import { SearchOutlined, SyncOutlined } from '@ant-design/icons'
 
-const RecordFiter = ({ selectDate, setSelectDate }) => {
-  const [open, setOpen] = useState(false)
+const RecordFiter = () => {
   return (
-    <Popover
-      className="calendar-filter"
-      content={
-        <Card style={{ width: 300 }}>
-          <Calendar
-            fullscreen={false}
-            showWeek={true}
-            onSelect={(date) => {
-              setSelectDate(date)
-              setOpen(false)
+    <>
+      <Row gutter={10} justify={'center'}>
+        <Space>
+          <CalendarPopover />
+          至
+          <CalendarPopover />
+          <InputNumber
+            placeholder="最小"
+            controls={true}
+            min={0}
+            style={{
+              backgroundColor: '#f5f5f5',
+              borderRadius: 6,
+              width: 180
             }}
           />
-        </Card>
-      }
-      trigger="click"
-      open={open}
-      onOpenChange={(visible) => setOpen(visible)}
-    >
-      {selectDate}
-      <CalendarOutlined />
-    </Popover>
+          至
+          <InputNumber
+            placeholder="最大"
+            controls={true}
+            min={0}
+            style={{
+              backgroundColor: '#f5f5f5',
+              borderRadius: 6,
+              width: 180
+            }}
+          />
+          <Button>
+            <SearchOutlined />
+            搜索
+          </Button>
+          <Button>
+            <SyncOutlined />
+            重置
+          </Button>
+        </Space>
+      </Row>
+    </>
   )
 }
 
