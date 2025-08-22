@@ -3,33 +3,35 @@ import CalendarPopover from './CalendarPopover'
 import { Button, InputNumber, Row, Space } from 'antd'
 import { SearchOutlined, SyncOutlined } from '@ant-design/icons'
 
-const RecordFiter = () => {
+const RecordFiter = ({ staDay, endDay }) => {
   return (
     <>
-      <Row gutter={10} justify={'center'}>
-        <Space>
-          <CalendarPopover />
+      <Row gutter={10} justify={'center'} wrap={true}>
+        <Space wrap={true}>
+          <CalendarPopover 
+            onChange={(date) => staDay(date)}
+          />
           至
-          <CalendarPopover />
+          <CalendarPopover 
+            onChange={(date) => endDay(date)}
+          />
           <InputNumber
-            placeholder="最小"
+            placeholder="最小积分"
             controls={true}
             min={0}
             style={{
-              backgroundColor: '#f5f5f5',
-              borderRadius: 6,
-              width: 180
+              backgroundColor: '#F3F4F6',
+              width: 160
             }}
           />
           至
           <InputNumber
-            placeholder="最大"
+            placeholder="最大积分"
             controls={true}
             min={0}
             style={{
-              backgroundColor: '#f5f5f5',
-              borderRadius: 6,
-              width: 180
+              backgroundColor: '#F3F4F6',
+              width: 160
             }}
           />
           <Button>

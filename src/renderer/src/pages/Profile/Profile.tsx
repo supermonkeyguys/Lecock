@@ -1,5 +1,5 @@
 import HeaderIntroduction from '@renderer/components/header-introduction'
-import { Card, Col, Collapse, Row, Tag, Tooltip, Typography } from 'antd'
+import { Card, Col, Collapse, Row, Tooltip, Typography } from 'antd'
 import avatarImg from './avatar.jpg'
 import './Profile.css'
 import { StarFilled, SunOutlined } from '@ant-design/icons'
@@ -19,7 +19,7 @@ const panelHeaders: PanelHeaderProps[] = [
   {
     icon: <SunOutlined style={{ fontSize: 24 }} />,
     title: (
-      <Title style={{ margin: 0 }} level={4}>
+      <Title style={{ margin: 0 }} level={5}>
         早起鸟
       </Title>
     ),
@@ -71,7 +71,7 @@ const Profile = () => {
                 showArrow={false}
                 key={index}
                 header={
-                  <Row align={'middle'} style={{padding:0}}>
+                  <Row align={'middle'} style={{ padding: 0 }}>
                     <div className="panel-icon">{item.icon}</div>
                     <div className="panel-text">
                       <div>{item.title}</div>

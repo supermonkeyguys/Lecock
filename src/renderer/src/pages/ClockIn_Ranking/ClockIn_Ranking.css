@@ -42,6 +42,15 @@
   text-align: center;
   font-weight: bold;
 }
+.normal{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 50%;
+  text-align: center;
+  font-weight: bold;
+}
 .hours {
   color: rgba(99, 102, 241);
   font-weight: 700;

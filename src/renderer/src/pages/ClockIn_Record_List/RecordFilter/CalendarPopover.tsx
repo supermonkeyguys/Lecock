@@ -2,17 +2,19 @@ import { CalendarOutlined } from '@ant-design/icons'
 import { Calendar, Card, Popover } from 'antd'
 import { useState } from 'react'
 
-const CalendarPopover = () => {
+const CalendarPopover = ({ onChange }) => {
   const date = new Date()
   const day = date.getDate()
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const yearMonth = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`
 
-  const [selectDate, setSelectDate] = useState(yearMonth)
+  const [selectDate, setSelectDate] = useState('')
 
   const handleSelect = (date) => {
-    setSelectDate(date.format('YYYY-MM-DD'))
+    const formatted = date.format('YYYY-MM-DD')
+    setSelectDate(formatted)
+    onChange(formatted)
   }
   const [open, setOpen] = useState(false)
   return (
@@ -21,12 +23,12 @@ const CalendarPopover = () => {
       content={
         <Card style={{ width: 300 }}>
           <Calendar
-            fullscreen={false}
-            showWeek={true}
-            onSelect={(date) => {
+            onChange={(date) => {
               handleSelect(date)
               setOpen(false)
             }}
+            fullscreen={false}
+            showWeek={true}
           />
         </Card>
       }

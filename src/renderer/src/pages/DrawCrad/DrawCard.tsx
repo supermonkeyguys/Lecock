@@ -61,6 +61,12 @@ const records = [
 const DrawCard = () => {
   const [isDraw, setIsDraw] = useState(false)
   const [flipped, setFlipped] = useState(false)
+  const [points,setPoints] = useState(320)
+
+  const handleDrawCard = () => {
+    setFlipped(!flipped)
+    setPoints(points - 50);
+  }
 
   return (
     <div className="drawcard-container">
@@ -73,7 +79,7 @@ const DrawCard = () => {
               <Title level={4} style={{ margin: 0 }}>
                 当前积分
               </Title>
-              <Text style={{ color: 'orange', fontSize: 20, fontWeight: 600 }}>180</Text>
+              <Text style={{ color: 'orange', fontSize: 20, fontWeight: 600 }}>{points}</Text>
             </Col>
           </Row>
           <Row>
@@ -101,7 +107,7 @@ const DrawCard = () => {
                 className="drawcard-button"
                 onClick={() => {
                   setIsDraw(!isDraw)
-                  setFlipped(!flipped)
+                  handleDrawCard()
                 }}
                 type="primary"
                 icon={<GiftFilled />}
@@ -135,7 +141,7 @@ const DrawCard = () => {
                 className="drawcard-button"
                 type="primary"
                 onClick={() => {
-                  setFlipped(false)
+                  handleDrawCard()
                   setTimeout(() => {
                     setFlipped(true)
                   }, 1000)

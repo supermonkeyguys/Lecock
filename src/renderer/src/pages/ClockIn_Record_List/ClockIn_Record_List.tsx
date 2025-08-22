@@ -1,5 +1,5 @@
 import { Card, Col, Row, Typography } from 'antd'
-import React from 'react'
+import React, { useState } from 'react'
 import RecordTable from './RecordTable/RecordTable'
 import {
   ArrowLeftOutlined,
@@ -15,6 +15,11 @@ const { Title, Text } = Typography
 
 function ClockInRecordList(): React.JSX.Element {
   const navigate = useNavigate();
+
+  const [filterDaySta,setFilterDaySta] = useState('')
+  const [filterDayEnd,setFilterDayEnd] = useState('')
+  const [filterPointsSta,setFilterPointsSta] = useState('')
+  const [filterPointsEnd,setFilterPointsEnd] = useState('')
 
   return (
     <>
@@ -34,11 +39,16 @@ function ClockInRecordList(): React.JSX.Element {
       </div>
       <div className="record-list-filter">
         <Card className="record-list-card">
-          <RecordFiter />
+          <RecordFiter 
+            staDay={(day) => setFilterDaySta(day)}
+            endDay={(day) => setFilterDayEnd(day)}
+          />
         </Card>
       </div>
-      <RecordTable />
-
+      <RecordTable 
+        sta={filterDaySta}
+        end={filterDayEnd}
+      />
       <Row className="record-list-bottom" justify={'space-between'}>
         <Card className="bottom-card">
           <Row justify="center">

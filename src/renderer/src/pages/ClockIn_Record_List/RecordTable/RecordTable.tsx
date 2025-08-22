@@ -1,7 +1,7 @@
 import { ClockRecord } from '@renderer/store/type/recordStore'
 import { Button, Card, Space, Table, Typography } from 'antd'
 import dayjs from 'dayjs'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import './RecordTable.css'
 
 const { Title } = Typography
@@ -68,7 +68,7 @@ const columns = [
   }
 ]
 
-const RecordTable: React.FC = () => {
+const RecordTable = ({ sta, end }) => {
   const [data, setData] = useState<ClockRecord[]>(generateMockData(25))
   const [pagination, setPagination] = useState({ current: 1, pageSize: 10 })
 
@@ -78,18 +78,37 @@ const RecordTable: React.FC = () => {
     setPagination({ ...pagination, current: 1 })
   }
 
+  const dataSource = useMemo(() => {
+    console.log('sta:' + sta + 'end: ' + end)
+    if (!sta || !end) return data
+
+    const start = dayjs(sta, 'YYYY-MM-DD')
+    const finish = dayjs(end, 'YYYY-MM-DD')
+
+    const [from, to] = start.isAfter(finish, 'day') ? [finish, start] : [start, finish]
+
+    return data.filter((item) => {
+      const d = dayjs(item.date)
+      const gteStart = d.isAfter(from, 'day') || d.isSame(from, 'day') // >=
+      const lteEnd = d.isBefore(to, 'day') || d.isSame(to, 'day') // <=
+      return gteStart && lteEnd
+    })
+  }, [sta, end, data])
+
   return (
     <div className="record-list-table">
-      <Card className='record-list-card'>
+      <Card className="record-list-card">
         <Space style={{ marginBottom: 16 }}>
-          <Title level={4} style={{marginTop:0}}>打卡记录列表</Title>
+          <Title level={4} style={{ marginTop: 0 }}>
+            打卡记录列表
+          </Title>
           <Button type="primary" onClick={handleRefresh}>
             刷新数据
           </Button>
         </Space>
         <Table
           columns={columns}
-          dataSource={data}
+          dataSource={dataSource}
           pagination={{
             current: pagination.current,
             pageSize: pagination.pageSize,

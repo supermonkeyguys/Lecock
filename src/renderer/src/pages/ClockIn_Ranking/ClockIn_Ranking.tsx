@@ -2,7 +2,7 @@ import { ClockCircleOutlined, TrophyOutlined } from '@ant-design/icons'
 import HeaderIntroduction from '@renderer/components/header-introduction'
 import { Button, Card, Cascader, Col, Row, Segmented, Space, Table, Typography } from 'antd'
 import './ClockIn_Ranking.css'
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 
 const { Text, Title } = Typography
 
@@ -17,19 +17,19 @@ const options1: Option[] = [
     label: '全部年级'
   },
   {
-    value: 'freshman',
+    value: '大一',
     label: '大一'
   },
   {
-    value: 'sophomore',
+    value: '大二',
     label: '大二'
   },
   {
-    value: 'junior',
+    value: '大三',
     label: '大三'
   },
   {
-    value: 'senior',
+    value: '大四',
     label: '大四'
   }
 ]
@@ -65,17 +65,28 @@ function generateRankData() {
 
 const ClockInRanking = () => {
   const [isHours, setIsHours] = useState(true)
+  const [grade, setGrade] = useState('allGrade')
+
+  const dataSource = useMemo(() => {
+    const raw = generateRankData()
+    const filterData = grade === 'allGrade' ? raw : raw.filter((m) => m.grade === grade)
+    const sorted = [...filterData].sort((a, b) => (isHours ? b.hours - a.hours : b.price - a.price))
+    return sorted.map((item, idx) => ({ ...item, rank: idx + 1 }))
+  }, [grade, isHours])
 
   const columns = [
     {
       title: '排名',
       dataIndex: 'rank',
       key: 'rank',
-      render: (rank: number) => {
+      render: (index: number) => {
         const colors = ['#FFD700', '#C0C0C0', '#CD7F32']
         return (
-          <span style={{ background: colors[rank - 1] }} className={rank <= 3 ? 'prev' : 'normal'}>
-            {rank}
+          <span
+            style={{ background: colors[index - 1] }}
+            className={index <= 3 ? 'prev' : 'normal'}
+          >
+            {index}
           </span>
         )
       }
@@ -88,7 +99,7 @@ const ClockInRanking = () => {
     {
       title: '年级',
       dataIndex: 'grade',
-      key: 'garde'
+      key: 'grade'
     },
     {
       title: isHours ? '打卡时长' : '积分',
@@ -120,7 +131,15 @@ const ClockInRanking = () => {
             <Text type="secondary" style={{ display: 'block', marginBottom: 8 }}>
               年级筛选
             </Text>
-            <Cascader options={options1} defaultValue={['allGrade']} allowClear={false} />
+            <Cascader
+              options={options1}
+              defaultValue={['allGrade']}
+              allowClear={false}
+              onChange={(value) => {
+                if (value && value.length > 0) setGrade(value[0])
+                console.log(grade)
+              }}
+            />
           </Col>
           <Col flex={'none'}>
             <Text type="secondary" style={{ display: 'block', marginBottom: 8 }}>
@@ -129,11 +148,7 @@ const ClockInRanking = () => {
             <Cascader options={options2} defaultValue={['thisWeek']} allowClear={false} />
           </Col>
           <Col flex="none">
-            <Button
-              className='filter-button'
-              type="primary"
-              style={{ marginTop: 24}}
-            >
+            <Button className="filter-button" type="primary" style={{ marginTop: 24 }}>
               应用筛选
             </Button>
           </Col>
@@ -144,7 +159,7 @@ const ClockInRanking = () => {
         <Title level={3} style={{ marginBottom: 20, marginTop: 0 }}>
           {isHours ? `打卡时长` : `积分`}排行榜
         </Title>
-        <Table showHeader={true} columns={columns} dataSource={generateRankData()} />
+        <Table showHeader={true} columns={columns} dataSource={dataSource} />
       </Card>
     </div>
   )
